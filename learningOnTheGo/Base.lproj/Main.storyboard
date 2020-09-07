@@ -37,14 +37,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input text here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9K-Ht-B4M">
-                                <rect key="frame" x="50" y="187" width="303" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Press to bring up keyboard" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9K-Ht-B4M">
+                                <rect key="frame" x="50" y="148.5" width="303" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To enable this translation keyboard, go to Setting -&gt; General -&gt; keyboard -&gt;  keyboards -&gt; Add New keyboard" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUB-cq-VQM">
+                                <rect key="frame" x="20" y="40" width="374" height="68.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bUB-cq-VQM" firstAttribute="top" secondItem="jNN-9o-fYL" secondAttribute="top" constant="40" id="3a6-JY-Vhn"/>
+                            <constraint firstAttribute="trailing" secondItem="bUB-cq-VQM" secondAttribute="trailing" constant="20" id="Dd5-Fm-oL8"/>
+                            <constraint firstItem="G1d-bq-mAy" firstAttribute="trailing" secondItem="j9K-Ht-B4M" secondAttribute="trailing" constant="61" id="GhH-pz-lpb"/>
+                            <constraint firstItem="j9K-Ht-B4M" firstAttribute="top" secondItem="bUB-cq-VQM" secondAttribute="bottom" constant="40" id="Qs9-Ez-F1H"/>
+                            <constraint firstItem="bUB-cq-VQM" firstAttribute="leading" secondItem="jNN-9o-fYL" secondAttribute="leading" constant="20" id="gpu-RV-VsL"/>
+                            <constraint firstItem="j9K-Ht-B4M" firstAttribute="leading" secondItem="G1d-bq-mAy" secondAttribute="leading" constant="50" id="icB-2u-R1M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G1d-bq-mAy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Translation Host App" id="bRR-Fk-wE3"/>
