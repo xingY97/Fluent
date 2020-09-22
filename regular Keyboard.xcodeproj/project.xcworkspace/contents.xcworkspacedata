@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:learningOnTheGo.xcodeproj">
+      location = "self:regular Keyboard.xcodeproj">
    </FileRef>
 </Workspace>

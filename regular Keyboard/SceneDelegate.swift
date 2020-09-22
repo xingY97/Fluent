@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  learningOnTheGo
+//  regular Keyboard
 //
-//  Created by XIN on 8/31/20.
+//  Created by XIN on 9/15/20.
 //  Copyright © 2020 XIN. All rights reserved.
 //
 
