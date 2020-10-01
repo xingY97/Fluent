@@ -12,7 +12,7 @@ class KeyboardViewController: UIInputViewController {
     
     var keyboardView: UIView!
     
-    @IBOutlet var nextKeyboardButton: UIButton!
+    @IBOutlet weak var previewLabel: UILabel!
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -35,6 +35,8 @@ class KeyboardViewController: UIInputViewController {
           if let word = word {
             lastWord = word
           }
+            
+
         }
       }
       return lastWord
@@ -54,9 +56,6 @@ class KeyboardViewController: UIInputViewController {
     @IBAction func deleteText(){
         let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.deleteBackward()
-    }
-    @IBAction func nextKeyboard() {
-        advanceToNextInputMode()
     }
     @IBAction func spacePress() {
         let proxy = textDocumentProxy as UITextDocumentProxy
@@ -80,6 +79,15 @@ class KeyboardViewController: UIInputViewController {
         view.backgroundColor = keyboardView.backgroundColor
         view.addSubview(keyboardView)
         
+        keyboardView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            keyboardView.leftAnchor.constraint(equalTo: inputView!.leftAnchor),
+            keyboardView.topAnchor.constraint(equalTo: inputView!.topAnchor),
+            keyboardView.rightAnchor.constraint(equalTo: inputView!.rightAnchor),
+            keyboardView.bottomAnchor.constraint(equalTo: inputView!.bottomAnchor)
+          ])
+      
+
     }
 
     
