@@ -21,28 +21,6 @@ class KeyboardViewController: UIInputViewController {
         
         // Add custom view sizing constraints here
     }
-//        //ios autocorrection
-//    var userLexicon: UILexicon?
-//
-//    var currentWord: String? {
-//      var lastWord: String?
-//      // 1 use documentContextBeforeInput to get the text before the cursor
-//      if let stringBeforeCursor = textDocumentProxy.documentContextBeforeInput {
-//
-//        // 2 enumerate each word of the string by using enumerateSubstrings
-//        stringBeforeCursor.enumerateSubstrings(in: stringBeforeCursor.startIndex...,
-//                                               options: .byWords)
-//        { word, _, _, _ in
-//          // 3when enumeration ends, whatever lastword contains will be the last word before the cursor
-//          if let word = word {
-//            lastWord = word
-//          }
-//
-//
-//        }
-//      }
-//      return lastWord
-//    }
     
     
     override func viewDidLoad() {
@@ -109,29 +87,4 @@ class KeyboardViewController: UIInputViewController {
     }
 
 }
-// MARK: - Private methods
-//private extension KeyboardViewController {
-//  func attemptToReplaceCurrentWord() {
-//    // 1 ensure that user lexicon and current word exist before continuing
-//    guard let entries = userLexicon?.entries,
-//      let currentWord = currentWord?.lowercased() else {
-//        return
-//    }
-//
-//    // 2 Filter the lexicon data by comparing userInput to the current word. omw=on my way
-//    let replacementEntries = entries.filter {
-//      $0.userInput.lowercased() == currentWord
-//    }
-//
-//    if let replacement = replacementEntries.first {
-//      // 3 if find match, delete th ecurrent word from the text input view
-//      for _ in 0..<currentWord.count {
-//        textDocumentProxy.deleteBackward()
-//      }
-//
-//      // 4 insert the replacementtext definded using the lexicon property documenttext
-//
-//      textDocumentProxy.insertText(replacement.documentText)
-//    }
-//  }
-//}
+
