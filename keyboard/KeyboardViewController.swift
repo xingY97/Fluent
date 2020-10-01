@@ -13,34 +13,35 @@ class KeyboardViewController: UIInputViewController {
     var keyboardView: UIView!
     
     @IBOutlet weak var previewLabel: UILabel!
+
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
         // Add custom view sizing constraints here
     }
-        //ios autocorrection
-    var userLexicon: UILexicon?
-    
-    var currentWord: String? {
-      var lastWord: String?
-      // 1 use documentContextBeforeInput to get the text before the cursor
-      if let stringBeforeCursor = textDocumentProxy.documentContextBeforeInput {
-        
-        // 2 enumerate each word of the string by using enumerateSubstrings
-        stringBeforeCursor.enumerateSubstrings(in: stringBeforeCursor.startIndex...,
-                                               options: .byWords)
-        { word, _, _, _ in
-          // 3when enumeration ends, whatever lastword contains will be the last word before the cursor
-          if let word = word {
-            lastWord = word
-          }
-            
-
-        }
-      }
-      return lastWord
-    }
+//        //ios autocorrection
+//    var userLexicon: UILexicon?
+//
+//    var currentWord: String? {
+//      var lastWord: String?
+//      // 1 use documentContextBeforeInput to get the text before the cursor
+//      if let stringBeforeCursor = textDocumentProxy.documentContextBeforeInput {
+//
+//        // 2 enumerate each word of the string by using enumerateSubstrings
+//        stringBeforeCursor.enumerateSubstrings(in: stringBeforeCursor.startIndex...,
+//                                               options: .byWords)
+//        { word, _, _, _ in
+//          // 3when enumeration ends, whatever lastword contains will be the last word before the cursor
+//          if let word = word {
+//            lastWord = word
+//          }
+//
+//
+//        }
+//      }
+//      return lastWord
+//    }
     
     
     override func viewDidLoad() {
@@ -64,12 +65,12 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @IBAction func keyPress(sender: UIButton!) {
-        
-        let typedCharacter = sender.titleLabel?.text
+        guard let typedCharacter = sender.titleLabel?.text else { return }
         
         let proxy = textDocumentProxy as UITextDocumentProxy
-        proxy.insertText(typedCharacter!)
-
+        proxy.insertText(typedCharacter)
+        previewLabel.text! += "\(typedCharacter)"
+        
     }
     
     func loadKeyboard() {
@@ -97,33 +98,51 @@ class KeyboardViewController: UIInputViewController {
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
+        
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+            let viewAcc = UIView()
+            viewAcc.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+            viewAcc.backgroundColor = UIColor.gray
+
+            let newTF = UITextField(frame: CGRect(x: 2, y: 10, width: self.view.frame.size.width - 75 , height: 30))
+            newTF.backgroundColor = UIColor.white
+        newTF.borderStyle = UITextField.BorderStyle.none
+
+            let btnDone = UIButton(frame: CGRect(x: newTF.frame.size.width + 10, y: 5, width: 45, height: 30 ))
+            btnDone.backgroundColor = UIColor.blue
+            btnDone.setTitle("Done", for: .normal)
+
+            viewAcc.addSubview(newTF)
+            viewAcc.addSubview(btnDone)
+            //self.mytextField.inputAccessoryView = viewAcc
+        }
 
 }
 // MARK: - Private methods
-private extension KeyboardViewController {
-  func attemptToReplaceCurrentWord() {
-    // 1 ensure that user lexicon and current word exist before continuing
-    guard let entries = userLexicon?.entries,
-      let currentWord = currentWord?.lowercased() else {
-        return
-    }
-
-    // 2 Filter the lexicon data by comparing userInput to the current word. omw=on my way
-    let replacementEntries = entries.filter {
-      $0.userInput.lowercased() == currentWord
-    }
-
-    if let replacement = replacementEntries.first {
-      // 3 if find match, delete th ecurrent word from the text input view
-      for _ in 0..<currentWord.count {
-        textDocumentProxy.deleteBackward()
-      }
-
-      // 4 insert the replacementtext definded using the lexicon property documenttext
-        
-      textDocumentProxy.insertText(replacement.documentText)
-    }
-  }
-}
+//private extension KeyboardViewController {
+//  func attemptToReplaceCurrentWord() {
+//    // 1 ensure that user lexicon and current word exist before continuing
+//    guard let entries = userLexicon?.entries,
+//      let currentWord = currentWord?.lowercased() else {
+//        return
+//    }
+//
+//    // 2 Filter the lexicon data by comparing userInput to the current word. omw=on my way
+//    let replacementEntries = entries.filter {
+//      $0.userInput.lowercased() == currentWord
+//    }
+//
+//    if let replacement = replacementEntries.first {
+//      // 3 if find match, delete th ecurrent word from the text input view
+//      for _ in 0..<currentWord.count {
+//        textDocumentProxy.deleteBackward()
+//      }
+//
+//      // 4 insert the replacementtext definded using the lexicon property documenttext
+//
+//      textDocumentProxy.insertText(replacement.documentText)
+//    }
+//  }
+//}
