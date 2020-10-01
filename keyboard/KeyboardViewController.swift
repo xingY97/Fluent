@@ -11,6 +11,7 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     
     var keyboardView: UIView!
+    var proxy: UITextDocumentProxy!
     
     @IBOutlet weak var previewLabel: UILabel!
 
@@ -46,30 +47,35 @@ class KeyboardViewController: UIInputViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        proxy = textDocumentProxy
         loadKeyboard()
-        
     }
     @IBAction func hideKeyboard(){
         dismissKeyboard()
         
     }
     @IBAction func deleteText(){
-        let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.deleteBackward()
-    }
-    @IBAction func spacePress() {
-        let proxy = textDocumentProxy as UITextDocumentProxy
-        proxy.insertText(" ")
         
+        if let newText = proxy.documentContextBeforeInput {
+            previewLabel.text! = newText
+        } else {
+            previewLabel.text = ""
+        }
+
+    }
+    
+    @IBAction func spacePress() {
+        proxy.insertText(" ")
+        guard let newText = proxy.documentContextBeforeInput else { return }
+        previewLabel.text! = newText
     }
     
     @IBAction func keyPress(sender: UIButton!) {
         guard let typedCharacter = sender.titleLabel?.text else { return }
-        
-        let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.insertText(typedCharacter)
-        previewLabel.text! += "\(typedCharacter)"
+        guard let newText = proxy.documentContextBeforeInput else { return }
+        previewLabel.text! = newText
         
     }
     
@@ -101,23 +107,6 @@ class KeyboardViewController: UIInputViewController {
         
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-            let viewAcc = UIView()
-            viewAcc.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-            viewAcc.backgroundColor = UIColor.gray
-
-            let newTF = UITextField(frame: CGRect(x: 2, y: 10, width: self.view.frame.size.width - 75 , height: 30))
-            newTF.backgroundColor = UIColor.white
-        newTF.borderStyle = UITextField.BorderStyle.none
-
-            let btnDone = UIButton(frame: CGRect(x: newTF.frame.size.width + 10, y: 5, width: 45, height: 30 ))
-            btnDone.backgroundColor = UIColor.blue
-            btnDone.setTitle("Done", for: .normal)
-
-            viewAcc.addSubview(newTF)
-            viewAcc.addSubview(btnDone)
-            //self.mytextField.inputAccessoryView = viewAcc
-        }
 
 }
 // MARK: - Private methods
