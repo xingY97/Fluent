@@ -69,7 +69,7 @@ class KeyboardViewController: UIInputViewController {
         
         let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.insertText(typedCharacter!)
-        
+
     }
     
     func loadKeyboard() {
