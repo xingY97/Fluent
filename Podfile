@@ -6,7 +6,7 @@ target 'keyboard' do
   use_frameworks!
 
   # Pods for keyboard
-	 pod 'KeyboardKit'
+	 
 
 end
 
@@ -15,6 +15,6 @@ target 'regular Keyboard' do
   use_frameworks!
 
   # Pods for regular Keyboard
- pod 'KeyboardKit'
+ 
 
 end
