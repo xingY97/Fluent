@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22446A34253635BC00308839 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22446A33253635BC00308839 /* UIViewController+Extension.swift */; };
 		22446A5E25366F0800308839 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22446A5D25366F0800308839 /* GoogleService-Info.plist */; };
 		22446A5F25366F0800308839 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22446A5D25366F0800308839 /* GoogleService-Info.plist */; };
 		22DAB81A25116DFF00E721A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAB81925116DFF00E721A0 /* AppDelegate.swift */; };
@@ -50,7 +49,6 @@
 /* Begin PBXFileReference section */
 		1F9ADCB462B32FCF232E6732 /* Pods-regular Keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-regular Keyboard.debug.xcconfig"; path = "Target Support Files/Pods-regular Keyboard/Pods-regular Keyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		1FB869788DDD75EA69E05E9F /* Pods_keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22446A33253635BC00308839 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		22446A5D25366F0800308839 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22DAB81625116DFF00E721A0 /* regular Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "regular Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DAB81925116DFF00E721A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,22 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22446A37253635C600308839 /* Extensiioins */ = {
-			isa = PBXGroup;
-			children = (
-				22446A33253635BC00308839 /* UIViewController+Extension.swift */,
-			);
-			path = Extensiioins;
-			sourceTree = "<group>";
-		};
-		22446A3A253635E100308839 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				22446A37253635C600308839 /* Extensiioins */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		22446A3D253636F800308839 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				22446A5D25366F0800308839 /* GoogleService-Info.plist */,
-				22446A3A253635E100308839 /* Helpers */,
 				22446A3D253636F800308839 /* Controllers */,
 				22446A422536371200308839 /* Views */,
 				22DAB83525116E4600E721A0 /* Info.plist */,
@@ -395,7 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22446A34253635BC00308839 /* UIViewController+Extension.swift in Sources */,
 				22DAB81E25116DFF00E721A0 /* ViewController.swift in Sources */,
 				22DAB81A25116DFF00E721A0 /* AppDelegate.swift in Sources */,
 				22DAB81C25116DFF00E721A0 /* SceneDelegate.swift in Sources */,
