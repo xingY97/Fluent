@@ -6,6 +6,8 @@ target 'keyboard' do
   use_frameworks!
 
   # Pods for keyboard
+  pod 'Firebase/Analytics'
+  pod 'GoogleMLKit/Translate'
 	 
 
 end
@@ -15,6 +17,8 @@ target 'regular Keyboard' do
   use_frameworks!
 
   # Pods for regular Keyboard
+  pod 'Firebase/Analytics'
+  pod 'GoogleMLKit/Translate'
  
 
 end

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import 
+import MLKit
 
 class KeyboardViewController: UIInputViewController {
     
@@ -27,22 +27,29 @@ class KeyboardViewController: UIInputViewController {
         allowsCellularAccess: false,
         allowsBackgroundDownloading: true
     )
+    lazy var options: TranslatorOptions = {
+        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+        return options
+    }()
     
-    let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
-    let translator = Translator.translator(options: options)
+    lazy var translator: Translator = {
+        let translator = Translator.translator(options: options)
+        return translator
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         proxy = textDocumentProxy
         loadKeyboard()
-        
         translator.downloadModelIfNeeded(with: conditions) { [weak self] error in
             guard error == nil, let self = self else {
                 print(error ?? "Error downloading!")
                 return
             }
-            
-            self.translateText(translator: translator)
+            print("Downloaded model successfully")
+            //self.translateText(text: "Hello")
+//            self.translateText(translator: self.translator)
         }
     }
     @IBAction func hideKeyboard(){
@@ -53,9 +60,11 @@ class KeyboardViewController: UIInputViewController {
         proxy.deleteBackward()
         
         if let newText = proxy.documentContextBeforeInput {
-            previewLabel.text! = newText
+            //previewLabel.text! = newText
+            translateText(text: newText)
         } else {
-            previewLabel.text = ""
+            //previewLabel.text = ""
+            translateText(text: "")
         }
 
     }
@@ -63,15 +72,16 @@ class KeyboardViewController: UIInputViewController {
     @IBAction func spacePress() {
         proxy.insertText(" ")
         guard let newText = proxy.documentContextBeforeInput else { return }
-        previewLabel.text! = newText
+        //previewLabel.text! = newText
+        translateText(text: newText)
     }
     
     @IBAction func keyPress(sender: UIButton!) {
         guard let typedCharacter = sender.titleLabel?.text else { return }
         proxy.insertText(typedCharacter)
         guard let newText = proxy.documentContextBeforeInput else { return }
-        previewLabel.text! = newText
-        
+        //previewLabel.text! = newText
+        translateText(text: newText)
     }
     
     func loadKeyboard() {
@@ -92,11 +102,11 @@ class KeyboardViewController: UIInputViewController {
 
     }
     
-    func translateText(translator: Translator) {
-        translator.translate("how are you?") { translatedText, error in
+    func translateText(text: String) {
+        translator.translate(text) { translatedText, error in
             guard error == nil, let translatedText = translatedText else { return }
-
             print(translatedText)
+            self.previewLabel.text = translatedText
         }
     }
     
