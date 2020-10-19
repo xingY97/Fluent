@@ -142,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				22446A5D25366F0800308839 /* GoogleService-Info.plist */,
-				22446A3D253636F800308839 /* Controllers */,
 				22446A422536371200308839 /* Views */,
+				22446A3D253636F800308839 /* Controllers */,
 				22DAB83525116E4600E721A0 /* Info.plist */,
 			);
 			path = keyboard;

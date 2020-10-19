@@ -8,6 +8,7 @@
 
 import UIKit
 import MLKit
+import Firebase
 
 class KeyboardViewController: UIInputViewController {
     
@@ -15,7 +16,7 @@ class KeyboardViewController: UIInputViewController {
     var proxy: UITextDocumentProxy!
     
     @IBOutlet weak var previewLabel: UILabel!
-
+    
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -25,15 +26,17 @@ class KeyboardViewController: UIInputViewController {
     
     let conditions = ModelDownloadConditions(
         allowsCellularAccess: false,
-        allowsBackgroundDownloading: true
+        allowsBackgroundDownloading: false
     )
-    lazy var options: TranslatorOptions = {
+    
+    var options: TranslatorOptions = {
         let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
         return options
     }()
     
-    lazy var translator: Translator = {
-        let translator = Translator.translator(options: options)
+    var translator: Translator = {
+        let translator = Translator.translator(options:  TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish))
+        
         return translator
     }()
     
@@ -42,14 +45,22 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
         proxy = textDocumentProxy
         loadKeyboard()
+        
+      
+        
         translator.downloadModelIfNeeded(with: conditions) { [weak self] error in
             guard error == nil, let self = self else {
                 print(error ?? "Error downloading!")
                 return
             }
             print("Downloaded model successfully")
-            //self.translateText(text: "Hello")
-//            self.translateText(translator: self.translator)
+            
+        }
+        
+        translator.translate("how are you?") { translatedText, error in
+            guard error == nil, let translatedText = translatedText else { return }
+            
+            print(translatedText)
         }
     }
     @IBAction func hideKeyboard(){
@@ -60,19 +71,19 @@ class KeyboardViewController: UIInputViewController {
         proxy.deleteBackward()
         
         if let newText = proxy.documentContextBeforeInput {
-            //previewLabel.text! = newText
+            previewLabel.text! = newText
             translateText(text: newText)
         } else {
-            //previewLabel.text = ""
+            previewLabel.text = ""
             translateText(text: "")
         }
-
+        
     }
     
     @IBAction func spacePress() {
         proxy.insertText(" ")
         guard let newText = proxy.documentContextBeforeInput else { return }
-        //previewLabel.text! = newText
+        previewLabel.text! = newText
         translateText(text: newText)
     }
     
@@ -80,7 +91,7 @@ class KeyboardViewController: UIInputViewController {
         guard let typedCharacter = sender.titleLabel?.text else { return }
         proxy.insertText(typedCharacter)
         guard let newText = proxy.documentContextBeforeInput else { return }
-        //previewLabel.text! = newText
+        previewLabel.text! = newText
         translateText(text: newText)
     }
     
@@ -97,9 +108,9 @@ class KeyboardViewController: UIInputViewController {
             keyboardView.topAnchor.constraint(equalTo: inputView!.topAnchor),
             keyboardView.rightAnchor.constraint(equalTo: inputView!.rightAnchor),
             keyboardView.bottomAnchor.constraint(equalTo: inputView!.bottomAnchor)
-          ])
-      
-
+        ])
+        
+        
     }
     
     func translateText(text: String) {
@@ -117,8 +128,8 @@ class KeyboardViewController: UIInputViewController {
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
         
-
+        
     }
-
+    
 }
 
