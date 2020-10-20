@@ -5,5 +5,6 @@
 
 
 **Make sure change the xcode running scheme to the extension before running on a simulator**
+
 <img width="299" alt="Screen Shot 2020-10-20 at 3 02 23 PM" src="https://user-images.githubusercontent.com/45300300/96632169-52bf1f80-12e5-11eb-883f-ae10c31ae464.png">
 
