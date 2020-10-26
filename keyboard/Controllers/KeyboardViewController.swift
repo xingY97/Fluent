@@ -110,7 +110,6 @@ class KeyboardViewController: UIInputViewController {
             keyboardView.bottomAnchor.constraint(equalTo: inputView!.bottomAnchor)
         ])
         
-        
     }
     
     func translateText(text: String) {
