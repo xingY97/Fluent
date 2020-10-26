@@ -16,7 +16,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UIInputView">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="240"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="170" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-ZD-hEy">
