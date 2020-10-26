@@ -548,8 +548,18 @@
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZPh-ZR-vzT" userLabel="row5">
                             <rect key="frame" x="0.0" y="210" width="400" height="30"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJo-S1-lu1">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
+                                    <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Hide">
+                                        <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="hideKeyboard" destination="-1" eventType="touchUpInside" id="soK-Sv-MY4"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvT-LG-gck">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                    <rect key="frame" x="42" y="0.0" width="311" height="30"/>
                                     <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="space">
                                         <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
@@ -558,14 +568,14 @@
                                         <action selector="spacePress" destination="-1" eventType="touchUpInside" id="9HT-1t-igU"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJo-S1-lu1">
-                                    <rect key="frame" x="368" y="0.0" width="32" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nap-1p-ncG">
+                                    <rect key="frame" x="363" y="0.0" width="37" height="30"/>
                                     <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="Hide">
+                                    <state key="normal" title="Enter">
                                         <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
                                     </state>
                                     <connections>
-                                        <action selector="hideKeyboard" destination="-1" eventType="touchUpInside" id="soK-Sv-MY4"/>
+                                        <action selector="returnPressedWithSender:" destination="-1" eventType="touchUpInside" id="9ob-pV-4kK"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -670,6 +680,9 @@
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

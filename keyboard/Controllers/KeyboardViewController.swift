@@ -95,6 +95,11 @@ class KeyboardViewController: UIInputViewController {
         translateText(text: newText)
     }
     
+    @IBAction func returnPressed(sender: AnyObject) {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("\n")
+    }
+    
     func loadKeyboard() {
         
         let keyboardNib = UINib(nibName: "View", bundle: nil)
