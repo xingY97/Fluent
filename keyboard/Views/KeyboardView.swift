@@ -26,6 +26,7 @@ class KeyboardView: UIView {
     @IBOutlet weak var row1_8: UIButton!
     @IBOutlet weak var row1_9: UIButton!
     @IBOutlet weak var row1_0: UIButton!
+    
     @IBOutlet weak var row2_q: UIButton!
     @IBOutlet weak var row2_w: UIButton!
     @IBOutlet weak var row2_e: UIButton!
@@ -119,7 +120,17 @@ class KeyboardView: UIView {
             print("Make keyboard regular")
         case .shifted:
             print("Make keyboard shifted")
-            row1_1.setTitle("EYO", for: .normal)
+            row2_q.setTitle("-", for: .normal)
+            row2_w.setTitle("/", for: .normal)
+            row2_e.setTitle(":", for: .normal)
+            row2_r.setTitle(";", for: .normal)
+            row2_t.setTitle("(", for: .normal)
+            row2_y.setTitle(")", for: .normal)
+            row2_u.setTitle("$", for: .normal)
+            row2_i.setTitle("&", for: .normal)
+            row2_o.setTitle("@", for: .normal)
+            row2_p.setTitle(";", for: .normal)
+
         }
     }
 }
