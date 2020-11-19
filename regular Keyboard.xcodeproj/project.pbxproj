@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22446A5E25366F0800308839 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22446A5D25366F0800308839 /* GoogleService-Info.plist */; };
 		22446A5F25366F0800308839 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22446A5D25366F0800308839 /* GoogleService-Info.plist */; };
+		225BCC38256711900025E9FD /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225BCC37256711900025E9FD /* KeyboardView.swift */; };
 		22DAB81A25116DFF00E721A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAB81925116DFF00E721A0 /* AppDelegate.swift */; };
 		22DAB81C25116DFF00E721A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAB81B25116DFF00E721A0 /* SceneDelegate.swift */; };
 		22DAB81E25116DFF00E721A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAB81D25116DFF00E721A0 /* ViewController.swift */; };
@@ -17,7 +18,7 @@
 		22DAB82625116E0100E721A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DAB82425116E0100E721A0 /* LaunchScreen.storyboard */; };
 		22DAB83425116E4600E721A0 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAB83325116E4600E721A0 /* KeyboardViewController.swift */; };
 		22DAB83825116E4600E721A0 /* keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22DAB83125116E4600E721A0 /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		22DAB83E25116E6200E721A0 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DAB83D25116E6200E721A0 /* View.xib */; };
+		22DAB83E25116E6200E721A0 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DAB83D25116E6200E721A0 /* KeyboardView.xib */; };
 		38C12C8A40C92E1EB9FE8F21 /* Pods_regular_Keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256FA3BCE24C97690A52F128 /* Pods_regular_Keyboard.framework */; };
 		685DD1982F145DA6DA94262A /* Pods_keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB869788DDD75EA69E05E9F /* Pods_keyboard.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		1F9ADCB462B32FCF232E6732 /* Pods-regular Keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-regular Keyboard.debug.xcconfig"; path = "Target Support Files/Pods-regular Keyboard/Pods-regular Keyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		1FB869788DDD75EA69E05E9F /* Pods_keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22446A5D25366F0800308839 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		225BCC37256711900025E9FD /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		22DAB81625116DFF00E721A0 /* regular Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "regular Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DAB81925116DFF00E721A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DAB81B25116DFF00E721A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		22DAB83125116E4600E721A0 /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DAB83325116E4600E721A0 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		22DAB83525116E4600E721A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22DAB83D25116E6200E721A0 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		22DAB83D25116E6200E721A0 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		256FA3BCE24C97690A52F128 /* Pods_regular_Keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_regular_Keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61355FB48C507B95C93AC4B8 /* Pods-keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.release.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.release.xcconfig"; sourceTree = "<group>"; };
 		7434584838C8C74D669611DE /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +101,8 @@
 		22446A422536371200308839 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				22DAB83D25116E6200E721A0 /* View.xib */,
+				22DAB83D25116E6200E721A0 /* KeyboardView.xib */,
+				225BCC37256711900025E9FD /* KeyboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,7 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22DAB83E25116E6200E721A0 /* View.xib in Resources */,
+				22DAB83E25116E6200E721A0 /* KeyboardView.xib in Resources */,
 				22446A5F25366F0800308839 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DAB83425116E4600E721A0 /* KeyboardViewController.swift in Sources */,
+				225BCC38256711900025E9FD /* KeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

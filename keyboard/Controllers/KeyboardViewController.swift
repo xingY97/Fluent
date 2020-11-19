@@ -10,13 +10,22 @@ import UIKit
 import MLKit
 import Firebase
 
+enum KeyboardState {
+    case regular, shifted
+}
+
 class KeyboardViewController: UIInputViewController {
-    
-    var keyboardView: UIView!
+
     var proxy: UITextDocumentProxy!
+    var keyboardState: KeyboardState = .regular {
+        didSet { keyboardView.updateKeyboardState(with: keyboardState) }
+    }
     
-    @IBOutlet weak var previewLabel: UILabel!
-    
+    lazy var keyboardView: KeyboardView = {
+        let view = KeyboardView(vc: self)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -71,57 +80,56 @@ class KeyboardViewController: UIInputViewController {
         proxy.deleteBackward()
         
         if let newText = proxy.documentContextBeforeInput {
-            previewLabel.text! = newText
+            keyboardView.previewLabel.text! = newText
             translateText(text: newText)
         } else {
-            previewLabel.text = ""
+            keyboardView.previewLabel.text = ""
             translateText(text: "")
         }
         
     }
     
-    @IBAction func spacePress() {
+    func spacePress() {
         proxy.insertText(" ")
         guard let newText = proxy.documentContextBeforeInput else { return }
-        previewLabel.text! = newText
+        keyboardView.previewLabel.text! = newText
         translateText(text: newText)
     }
     
-    @IBAction func keyPress(sender: UIButton!) {
+    func keyPress(sender: UIButton!) {
         guard let typedCharacter = sender.titleLabel?.text else { return }
         proxy.insertText(typedCharacter)
         guard let newText = proxy.documentContextBeforeInput else { return }
-        previewLabel.text! = newText
+        keyboardView.previewLabel.text! = newText
         translateText(text: newText)
     }
     
-    @IBAction func returnPressed(sender: AnyObject) {
+    func returnPressed(sender: AnyObject) {
         let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.insertText("\n")
     }
     
+    func shiftKey(sender: AnyObject) {
+        keyboardState = .shifted
+    }
+    
     func loadKeyboard() {
         
-        let keyboardNib = UINib(nibName: "View", bundle: nil)
-        keyboardView = keyboardNib.instantiate(withOwner: self,options: nil)[0] as? UIView
         view.backgroundColor = keyboardView.backgroundColor
         view.addSubview(keyboardView)
-        
-        keyboardView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             keyboardView.leftAnchor.constraint(equalTo: inputView!.leftAnchor),
             keyboardView.topAnchor.constraint(equalTo: inputView!.topAnchor),
             keyboardView.rightAnchor.constraint(equalTo: inputView!.rightAnchor),
             keyboardView.bottomAnchor.constraint(equalTo: inputView!.bottomAnchor)
         ])
-        
     }
     
     func translateText(text: String) {
         translator.translate(text) { translatedText, error in
             guard error == nil, let translatedText = translatedText else { return }
             print(translatedText)
-            self.previewLabel.text = translatedText
+            self.keyboardView.previewLabel.text = translatedText
         }
     }
     
@@ -131,9 +139,6 @@ class KeyboardViewController: UIInputViewController {
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
-        
-        
     }
     
 }
-
