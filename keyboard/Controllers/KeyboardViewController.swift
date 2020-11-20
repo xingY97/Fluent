@@ -69,7 +69,7 @@ class KeyboardViewController: UIInputViewController {
         translator.translate("how are you?") { translatedText, error in
             guard error == nil, let translatedText = translatedText else { return }
             
-            print(translatedText)
+            //print(translatedText)
         }
     }
     @IBAction func hideKeyboard(){
