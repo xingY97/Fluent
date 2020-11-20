@@ -110,7 +110,12 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func shiftKey(sender: AnyObject) {
-        keyboardState = .shifted
+//        keyboardState = .shifted
+        if keyboardState == .regular {
+          keyboardState = .shifted
+        } else {
+          keyboardState = .regular
+        }
     }
     
     func loadKeyboard() {
