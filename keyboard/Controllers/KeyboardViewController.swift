@@ -11,7 +11,7 @@ import MLKit
 import Firebase
 
 enum KeyboardState {
-    case regular, shifted
+    case regular, shifted, caps
 }
 
 class KeyboardViewController: UIInputViewController {
@@ -115,6 +115,14 @@ class KeyboardViewController: UIInputViewController {
           keyboardState = .shifted
         } else {
           keyboardState = .regular
+        }
+    }
+    
+    func capsKey(sender: AnyObject) {
+        if keyboardState == .caps{
+            keyboardState = .regular
+        } else {
+            keyboardState = .caps
         }
     }
     
