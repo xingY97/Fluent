@@ -33,7 +33,6 @@ class KeyboardViewController: UIInputViewController {
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
-        
     }
     
     let conditions = ModelDownloadConditions(
@@ -70,10 +69,29 @@ class KeyboardViewController: UIInputViewController {
             guard error == nil, let translatedText = translatedText else { return }
         }
     }
-//    @IBAction func hideKeyboard(){
-//        dismissKeyboard()
+    @IBAction func hideKeyboard(){
+        dismissKeyboard()
+
+    }
+//    let str = "hipstar"
+//    let textChecker = UITextChecker()
+//    let misspelledRange =
+//        textChecker.rangeOfMisspelledWord(in: str,
+//                                          range: NSRange(0..<str.utf16.count),
+//                                          startingAt: 0,
+//                                          wrap: false,
+//                                          language: "en_US")
 //
+//    if misspelledRange.location != NSNotFound,
+//        let firstGuess = textChecker.guesses(forWordRange: misspelledRange,
+//                                             in: str,
+//                                             language: "en_US")?.first
+//    {
+//        print("First guess: \(firstGuess)") // First guess: hipster
+//    } else {
+//        print("Not found")
 //    }
+    
     @IBAction func deleteText(){
         proxy.deleteBackward()
         
