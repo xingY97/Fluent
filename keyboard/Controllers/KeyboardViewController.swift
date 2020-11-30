@@ -10,12 +10,15 @@ import UIKit
 import MLKit
 import Firebase
 
+
+
 enum KeyboardState {
     case regular, symples, caps
 }
 
 class KeyboardViewController: UIInputViewController {
-
+    
+    
     var proxy: UITextDocumentProxy!
     var keyboardState: KeyboardState = .regular {
         didSet { keyboardView.updateKeyboardState(with: keyboardState) }
@@ -30,7 +33,7 @@ class KeyboardViewController: UIInputViewController {
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
-        // Add custom view sizing constraints here
+        
     }
     
     let conditions = ModelDownloadConditions(
@@ -55,27 +58,22 @@ class KeyboardViewController: UIInputViewController {
         proxy = textDocumentProxy
         loadKeyboard()
         
-      
-        
         translator.downloadModelIfNeeded(with: conditions) { [weak self] error in
             guard error == nil, let self = self else {
                 print(error ?? "Error downloading!")
                 return
             }
-            print("Downloaded model successfully")
+            //print("Downloaded model successfully")
             
         }
-        
         translator.translate("how are you?") { translatedText, error in
             guard error == nil, let translatedText = translatedText else { return }
-            
-            //print(translatedText)
         }
     }
-    @IBAction func hideKeyboard(){
-        dismissKeyboard()
-        
-    }
+//    @IBAction func hideKeyboard(){
+//        dismissKeyboard()
+//
+//    }
     @IBAction func deleteText(){
         proxy.deleteBackward()
         
@@ -94,6 +92,7 @@ class KeyboardViewController: UIInputViewController {
         guard let newText = proxy.documentContextBeforeInput else { return }
         keyboardView.previewLabel.text! = newText
         translateText(text: newText)
+
     }
     
     func keyPress(sender: UIButton!) {
@@ -151,7 +150,7 @@ class KeyboardViewController: UIInputViewController {
     override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
-    
+
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
     }
