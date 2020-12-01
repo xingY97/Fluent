@@ -73,24 +73,6 @@ class KeyboardViewController: UIInputViewController {
         dismissKeyboard()
 
     }
-//    let str = "hipstar"
-//    let textChecker = UITextChecker()
-//    let misspelledRange =
-//        textChecker.rangeOfMisspelledWord(in: str,
-//                                          range: NSRange(0..<str.utf16.count),
-//                                          startingAt: 0,
-//                                          wrap: false,
-//                                          language: "en_US")
-//
-//    if misspelledRange.location != NSNotFound,
-//        let firstGuess = textChecker.guesses(forWordRange: misspelledRange,
-//                                             in: str,
-//                                             language: "en_US")?.first
-//    {
-//        print("First guess: \(firstGuess)") // First guess: hipster
-//    } else {
-//        print("Not found")
-//    }
     
     @IBAction func deleteText(){
         proxy.deleteBackward()
@@ -119,6 +101,7 @@ class KeyboardViewController: UIInputViewController {
         guard let newText = proxy.documentContextBeforeInput else { return }
         keyboardView.previewLabel.text! = newText
         translateText(text: newText)
+        spellCheck(text: newText)
     }
     
     func returnPressed(sender: AnyObject) {
@@ -163,6 +146,18 @@ class KeyboardViewController: UIInputViewController {
             print(translatedText)
             self.keyboardView.previewLabel.text = translatedText
         }
+    }
+    
+    func spellCheck(text: String){
+        let textChecker = UITextChecker()
+        let misspelledRange =
+        textChecker.rangeOfMisspelledWord(in: text,
+                                          range: NSRange(0..<text.utf16.count),
+                                          startingAt: 0,
+                                          wrap: false,
+                                          language: "en_US")
+        let fixedwords = textChecker.guesses(forWordRange: misspelledRange, in: text, language: "en_US")//?.first //gets the first word only
+        print(fixedwords)
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
