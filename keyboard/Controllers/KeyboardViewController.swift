@@ -16,6 +16,8 @@ enum KeyboardState {
     case regular, symples, caps
 }
 
+
+
 class KeyboardViewController: UIInputViewController {
     
     
@@ -92,6 +94,8 @@ class KeyboardViewController: UIInputViewController {
 //        print("Not found")
 //    }
     
+    
+    
     @IBAction func deleteText(){
         proxy.deleteBackward()
         
@@ -110,7 +114,7 @@ class KeyboardViewController: UIInputViewController {
         guard let newText = proxy.documentContextBeforeInput else { return }
         keyboardView.previewLabel.text! = newText
         translateText(text: newText)
-
+        
     }
     
     func keyPress(sender: UIButton!) {

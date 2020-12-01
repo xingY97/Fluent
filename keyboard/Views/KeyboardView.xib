@@ -60,8 +60,8 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="240"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="170" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-ZD-hEy">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="225"/>
+                <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="170" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-ZD-hEy">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="235"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsw-kj-aFQ" userLabel="Preview Label">
                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -74,7 +74,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Nlb-op-ILP" userLabel="row1">
-                            <rect key="frame" x="0.0" y="55" width="400" height="30"/>
+                            <rect key="frame" x="0.0" y="57" width="400" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-ex-qjr">
                                     <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
@@ -182,7 +182,7 @@
                             <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bAS-m9-kce" userLabel="row2">
-                            <rect key="frame" x="0.0" y="90" width="400" height="30"/>
+                            <rect key="frame" x="0.0" y="94" width="400" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-SK-0iD">
                                     <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
@@ -287,7 +287,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="d47-7S-BDR" userLabel="row3">
-                            <rect key="frame" x="0.0" y="125" width="400" height="30"/>
+                            <rect key="frame" x="0.0" y="131" width="400" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpR-Qy-RAa">
                                     <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
@@ -382,7 +382,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-nK-Ycf" userLabel="row4">
-                            <rect key="frame" x="0.0" y="160" width="400" height="30"/>
+                            <rect key="frame" x="0.0" y="168" width="400" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2z-VG-vIS" userLabel="Shift">
                                     <rect key="frame" x="0.0" y="0.0" width="42.5" height="30"/>
@@ -477,7 +477,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZPh-ZR-vzT" userLabel="row5">
-                            <rect key="frame" x="0.0" y="195" width="400" height="30"/>
+                            <rect key="frame" x="0.0" y="205" width="400" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCl-sc-vd5">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -514,7 +514,6 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="jsw-kj-aFQ" secondAttribute="trailing" id="WhD-zA-bmg"/>
-                        <constraint firstItem="Nlb-op-ILP" firstAttribute="top" secondItem="jsw-kj-aFQ" secondAttribute="bottom" constant="5" id="j8f-Vm-noB"/>
                         <constraint firstItem="jsw-kj-aFQ" firstAttribute="leading" secondItem="Mei-ZD-hEy" secondAttribute="leading" id="sE3-gP-Ycm"/>
                     </constraints>
                 </stackView>
@@ -530,7 +529,7 @@
                 <constraint firstItem="Mei-ZD-hEy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hIE-pL-Ohe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1729" y="-147"/>
+            <point key="canvasLocation" x="-1397" y="-133"/>
         </view>
     </objects>
     <resources>
