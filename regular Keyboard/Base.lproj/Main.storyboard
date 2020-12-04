@@ -49,6 +49,36 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="gro-5f-UQ3">
+            <objects>
+                <viewController storyboardIdentifier="welcome" id="YuV-xK-zKx" customClass="WelcomeViewController" customModule="regular_Keyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I9J-07-49c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-3H-6cF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="drY-iX-qTk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fgy-3H-6cF" firstAttribute="top" secondItem="drY-iX-qTk" secondAttribute="top" id="98g-8i-kLA"/>
+                            <constraint firstItem="Fgy-3H-6cF" firstAttribute="leading" secondItem="drY-iX-qTk" secondAttribute="leading" id="Mg1-bC-0ln"/>
+                            <constraint firstItem="drY-iX-qTk" firstAttribute="bottom" secondItem="Fgy-3H-6cF" secondAttribute="bottom" id="bbI-Eq-FMI"/>
+                            <constraint firstItem="drY-iX-qTk" firstAttribute="trailing" secondItem="Fgy-3H-6cF" secondAttribute="trailing" id="fXd-s5-MF4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="holderView" destination="Fgy-3H-6cF" id="dr1-CD-eyJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCG-gA-ibN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684.05797101449275" y="137.94642857142856"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">

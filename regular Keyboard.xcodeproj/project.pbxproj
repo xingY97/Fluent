@@ -20,6 +20,7 @@
 		22DAB83825116E4600E721A0 /* keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22DAB83125116E4600E721A0 /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		22DAB83E25116E6200E721A0 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DAB83D25116E6200E721A0 /* KeyboardView.xib */; };
 		38C12C8A40C92E1EB9FE8F21 /* Pods_regular_Keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256FA3BCE24C97690A52F128 /* Pods_regular_Keyboard.framework */; };
+		4D0C8BB725783BBF00138522 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C8BB625783BBF00138522 /* WelcomeViewController.swift */; };
 		685DD1982F145DA6DA94262A /* Pods_keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB869788DDD75EA69E05E9F /* Pods_keyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		22DAB83525116E4600E721A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22DAB83D25116E6200E721A0 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		256FA3BCE24C97690A52F128 /* Pods_regular_Keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_regular_Keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0C8BB625783BBF00138522 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		61355FB48C507B95C93AC4B8 /* Pods-keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.release.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.release.xcconfig"; sourceTree = "<group>"; };
 		7434584838C8C74D669611DE /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2FD7F612FFF1137D138A7A /* Pods-regular Keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-regular Keyboard.release.xcconfig"; path = "Target Support Files/Pods-regular Keyboard/Pods-regular Keyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				22DAB82225116E0100E721A0 /* Assets.xcassets */,
 				22DAB82425116E0100E721A0 /* LaunchScreen.storyboard */,
 				22DAB82725116E0100E721A0 /* Info.plist */,
+				4D0C8BB625783BBF00138522 /* WelcomeViewController.swift */,
 			);
 			path = "regular Keyboard";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DAB81E25116DFF00E721A0 /* ViewController.swift in Sources */,
+				4D0C8BB725783BBF00138522 /* WelcomeViewController.swift in Sources */,
 				22DAB81A25116DFF00E721A0 /* AppDelegate.swift in Sources */,
 				22DAB81C25116DFF00E721A0 /* SceneDelegate.swift in Sources */,
 			);
