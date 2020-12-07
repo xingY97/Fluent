@@ -63,7 +63,8 @@ Documentation:
 * [Migration Guide for on-device APIs including translation](https://developers.google.com/ml-kit/migration)
 * [Tutorial: Translate text](https://firebase.google.com/docs/ml-kit/ios/translate-text)
 * [Apple Developer: Class documentation - UiTextChecker](https://developer.apple.com/documentation/uikit/uitextchecker) 
-Addition resources for development: 
+
+Additional resources for development: 
 * [Github: Swift compatible implementation of autocorrect for iOS](https://github.com/ansonl/ios-uitextchecker-autocorrect)
 * [StackOverflow: How to use autocorrect in iOS8](https://stackoverflow.com/questions/24627616/how-to-use-autocorrection-and-shortcut-list-in-ios8-custom-keyboard)
 * [StackOverflow: Custom keyboard suggestions with UiTextChecker](https://stackoverflow.com/questions/46153376/ios-custom-keyboard-suggestions-with-uitextchecker)
