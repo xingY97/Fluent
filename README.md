@@ -54,7 +54,7 @@ func keyPress(sender: UIButton!) {
     spellCheck(text: newText)
 }
 ```
-|> translateText() |> spellCheck() |
+| translateText() | spellCheck() |
 | --- | --- |
 | calls ML KIT for translation | calls UiTextChecker for spellchecking |
 | :white_check_mark: working as intended :white_check_mark: | :x: incomplete functionality :x: |
