@@ -58,6 +58,7 @@ func keyPress(sender: UIButton!) {
 | --- | --- |
 | calls ML KIT for translation | calls UiTextChecker for spellchecking |
 | :white_check_mark: working as intended :white_check_mark: | :x: incomplete functionality :x: |
+
 Documentation:
 * [Migration Guide for on-device APIs including translation](https://developers.google.com/ml-kit/migration)
 * [Tutorial: Translate text](https://firebase.google.com/docs/ml-kit/ios/translate-text)
