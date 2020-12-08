@@ -65,10 +65,17 @@ Documentation:
 * [Tutorial: Translate text](https://firebase.google.com/docs/ml-kit/ios/translate-text)
 * [Apple Developer: Class documentation - UiTextChecker](https://developer.apple.com/documentation/uikit/uitextchecker) 
 
-Additional resources for development: 
+Additional resources to aid development: 
 * [Github: Swift compatible implementation of autocorrect for iOS](https://github.com/ansonl/ios-uitextchecker-autocorrect)
 * [StackOverflow: How to use autocorrect in iOS8](https://stackoverflow.com/questions/24627616/how-to-use-autocorrection-and-shortcut-list-in-ios8-custom-keyboard)
 * [StackOverflow: Custom keyboard suggestions with UiTextChecker](https://stackoverflow.com/questions/46153376/ios-custom-keyboard-suggestions-with-uitextchecker)
 
 <h4>Onboarding Files</h4>
-** Fill in details such as how/where to change graphic assets**
+regular Keyboard > Base.lproj > LaunchScreen.storyboard
+
+NOTE: The onboarding screen only displays when the application is lauched for the first time. You will need to clear your cache in XCode for it to display on consecutive runs.
+
+<h4>User Images</h4>
+regular Keyboard > Assets.xcassets
+
+Add an image element in the launchsreen with the image name reference for it to appear
