@@ -46,7 +46,7 @@ Inside pod file enter
 
 ## Continuing development
 <h4>Relevant Code for translation and spellcheck</h4>
-Keyboard > Controllers > KeyboardViewController.swift
+> Keyboard > Controllers > KeyboardViewController.swift
 
 ```Swift
 func keyPress(sender: UIButton!) {
@@ -71,11 +71,11 @@ Additional resources to aid development:
 * [StackOverflow: Custom keyboard suggestions with UiTextChecker](https://stackoverflow.com/questions/46153376/ios-custom-keyboard-suggestions-with-uitextchecker)
 
 <h4>Onboarding Files</h4>
-regular Keyboard > Base.lproj > LaunchScreen.storyboard
+> regular Keyboard > Base.lproj > LaunchScreen.storyboard
 
 NOTE: The onboarding screen only displays when the application is lauched for the first time. You will need to clear your cache in XCode for it to display on consecutive runs.
 
 <h4>User Images</h4>
-regular Keyboard > Assets.xcassets
+> regular Keyboard > Assets.xcassets
 
 Add an image element in the launchsreen with the image name reference for it to appear
